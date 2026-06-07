@@ -519,7 +519,7 @@ spec:
                 description: |-
                   Container image options.
 
-                  Container image defaults to "quay.io/mantisnet/tawon@sha256:6b4270e547ded7c96db469bdf8a83b4cec51a916c0b4b4209b2b2ce893ae848e".
+                  Container image defaults to "quay.io/mantisnet/tawon@sha256:c703241efe31883b3d7cebd0fb07939cdda564ac332611ecec99555056f671ce".
                 properties:
                   credentialsSecret:
                     description: |-

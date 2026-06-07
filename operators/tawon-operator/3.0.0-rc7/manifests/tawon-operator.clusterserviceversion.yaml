@@ -199,8 +199,8 @@ metadata:
       ]
     capabilities: Basic Install
     categories: Logging & Tracing, Monitoring, Networking
-    containerImage: quay.io/mantisnet/tawon-operator@sha256:cafa1337b70c01557a133e2c61f678be61d33903e5124d3ecc2d23b1f31b393d
-    createdAt: "2026-06-02T19:05:29Z"
+    containerImage: quay.io/mantisnet/tawon-operator@sha256:ad8555f2af9e490e9713aa78781925b9fb2033687699ff7f763e53ff73aed782
+    createdAt: "2026-06-07T13:33:28Z"
     description: Tawon is a cloud-native observability fabric for deeply instrumenting microservice-based applications.
     features.operators.openshift.io/disconnected: "true"
     features.operators.openshift.io/fips-compliant: "false"
@@ -1046,7 +1046,7 @@ spec:
       - description: Deployment options. See TopologyDeploymentSpec.
         displayName: Deployment
         path: deployment
-      - description: "Container image options. \n Container image defaults to \"quay.io/mantisnet/tawon@sha256:6b4270e547ded7c96db469bdf8a83b4cec51a916c0b4b4209b2b2ce893ae848e\"."
+      - description: "Container image options. \n Container image defaults to \"quay.io/mantisnet/tawon@sha256:c703241efe31883b3d7cebd0fb07939cdda564ac332611ecec99555056f671ce\"."
         displayName: Image
         path: image
       - description: Default messaging configuration. This is the default configuration for subscribing to the topology stream.
@@ -1504,7 +1504,7 @@ spec:
                 - --upstream=http://127.0.0.1:8080/
                 - --logtostderr=true
                 - --v=0
-                image: quay.io/mantisnet/kube-rbac-proxy@sha256:32de3cb3a9ef9b6d3dff2bae3af31c3eb81c57115ab5d7a971dfd92dfa8d62a1
+                image: quay.io/mantisnet/kube-rbac-proxy@sha256:8b162ebd0e435fe15d0d5aba9bd534b68f4cf569f41b7f2ff0dc10b3e3c46518
                 name: kube-rbac-proxy
                 ports:
                 - containerPort: 8443
@@ -1531,18 +1531,18 @@ spec:
                 - /manager
                 env:
                 - name: TAWON_OPERATOR_DEFAULT_TAWON_IMAGE
-                  value: quay.io/mantisnet/tawon@sha256:6b4270e547ded7c96db469bdf8a83b4cec51a916c0b4b4209b2b2ce893ae848e
+                  value: quay.io/mantisnet/tawon@sha256:c703241efe31883b3d7cebd0fb07939cdda564ac332611ecec99555056f671ce
                 - name: TAWON_OPERATOR_DEFAULT_JETSTREAM_IMAGE
-                  value: quay.io/mantisnet/nats@sha256:4223c8fa116891628611e154fb66570cad599d8f8b3b131b82caf10f378e9dcf
+                  value: quay.io/mantisnet/nats@sha256:ca150c1091945a9d3d08c7229cd9a0f36e5d7f105da2aa655d80b428f4e67d1c
                 - name: TAWON_OPERATOR_DEFAULT_DASHBOARD_IMAGE
-                  value: quay.io/mantisnet/sengat@sha256:0373feaa2070d6d5e6c131ea53c620de847500abf1caea7e38a8f382ec9182bf
+                  value: quay.io/mantisnet/sengat@sha256:27c01b3d21443615692dc783600922c0f51ef47b53bddfb1aec68507e4cb4f19
                 - name: TAWON_OPERATOR_OPERATOR_NAMESPACE
                   value: system
                 - name: WATCH_NAMESPACE
                   valueFrom:
                     fieldRef:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
-                image: quay.io/mantisnet/tawon-operator@sha256:cafa1337b70c01557a133e2c61f678be61d33903e5124d3ecc2d23b1f31b393d
+                image: quay.io/mantisnet/tawon-operator@sha256:ad8555f2af9e490e9713aa78781925b9fb2033687699ff7f763e53ff73aed782
                 livenessProbe:
                   httpGet:
                     path: /healthz
@@ -1649,15 +1649,15 @@ spec:
     name: Mantisnet
     url: https://www.mantisnet.com
   relatedImages:
-  - image: quay.io/mantisnet/kube-rbac-proxy@sha256:32de3cb3a9ef9b6d3dff2bae3af31c3eb81c57115ab5d7a971dfd92dfa8d62a1
+  - image: quay.io/mantisnet/kube-rbac-proxy@sha256:8b162ebd0e435fe15d0d5aba9bd534b68f4cf569f41b7f2ff0dc10b3e3c46518
     name: kube-rbac-proxy
-  - image: quay.io/mantisnet/tawon-operator@sha256:cafa1337b70c01557a133e2c61f678be61d33903e5124d3ecc2d23b1f31b393d
+  - image: quay.io/mantisnet/tawon-operator@sha256:ad8555f2af9e490e9713aa78781925b9fb2033687699ff7f763e53ff73aed782
     name: manager
-  - image: quay.io/mantisnet/tawon@sha256:4ac5439ca176b325fcb71b3299b57ea13b2465d07fb35f32f980be54801d3984
+  - image: quay.io/mantisnet/tawon@sha256:3f22921402f0cfc01f6dd3b2168358f6ba5e6c22a6d06435ada116c84ef580b6
     name: tawon-debug
-  - image: quay.io/mantisnet/tawon@sha256:6b4270e547ded7c96db469bdf8a83b4cec51a916c0b4b4209b2b2ce893ae848e
+  - image: quay.io/mantisnet/tawon@sha256:c703241efe31883b3d7cebd0fb07939cdda564ac332611ecec99555056f671ce
     name: tawon
-  - image: quay.io/mantisnet/nats@sha256:4223c8fa116891628611e154fb66570cad599d8f8b3b131b82caf10f378e9dcf
+  - image: quay.io/mantisnet/nats@sha256:ca150c1091945a9d3d08c7229cd9a0f36e5d7f105da2aa655d80b428f4e67d1c
     name: nats
   - image: quay.io/mantisnet/kernel-headers@sha256:9290eb56b186ee0edf65da615c1a8aabc66f7d290168e49ad8764ab8fc2d209a
     name: kernel-headers-ocp-4.12.45
@@ -1667,15 +1667,15 @@ spec:
     name: kernel-headers-ocp-4.12.58
   - image: quay.io/mantisnet/kernel-headers@sha256:b0975a44cc94bc1d75679f288a9e23a65c2c0b350ce1fb2f5eb421a76a9567c6
     name: kernel-headers-ocp-4.12.74
-  - image: quay.io/mantisnet/tawonctl@sha256:3dd863c156fb4deed5c11c1cce4e21c959390d01975b5d3d540a2d9bf8ca7f8d
+  - image: quay.io/mantisnet/tawonctl@sha256:d4b4afd2db42a7cc31ecaeb6a62e54b35cbde667795d72d0ef0fc15a65cee1f0
     name: tawonctl
-  - image: quay.io/mantisnet/diagnose@sha256:4c72ecdc292a8ad5cc3c4f72d973752afcb6ed0f5fe35421f81a67b5cfba23bc
+  - image: quay.io/mantisnet/diagnose@sha256:1c4349a80ac3bce6b47867450daeaf8a1e27d7cf18fcdf926955cee07d818cd3
     name: diagnose
-  - image: quay.io/mantisnet/sengat@sha256:0373feaa2070d6d5e6c131ea53c620de847500abf1caea7e38a8f382ec9182bf
+  - image: quay.io/mantisnet/sengat@sha256:27c01b3d21443615692dc783600922c0f51ef47b53bddfb1aec68507e4cb4f19
     name: dashboard
-  - image: quay.io/mantisnet/oauth-proxy@sha256:f5b4e7e4e462dfa72c93eec8938e4680a6380c79fd7298442f52655a2982f4f7
+  - image: quay.io/mantisnet/oauth-proxy@sha256:d478e0201134e3f8794b34556f4f6917c0a4c68310a9dccecbc673d7fd6c1ec7
     name: oauth-proxy
-  replaces: tawon-operator.v3.0.0-rc6
+  replaces: tawon-operator.v3.0.0-rc7
   version: 3.0.0-rc7
   webhookdefinitions:
   - admissionReviewVersions:
